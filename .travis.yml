@@ -1,11 +1,12 @@
-sudo:          false
-language:      node_js
-node_js:
-  - "node"
-install:       npm install
-script:
-  - npm test
-  - gulp
-cache:
-  directories:
-    - node_modules
+language: node_js
+before_install:
+- openssl aes-256-cbc -K $encrypted_079d67244b3e_key -iv $encrypted_079d67244b3e_iv
+  -in deploy_key.enc -out deploy_key -d
+install: echo "skip install"
+branches:
+  only: master
+
+after_success:
+- chmod 600 deploy_key
+- mv deploy_key ~/.ssh/id_rsa
+- sftp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no  -b hp.bt hp@projects.g-node.org
