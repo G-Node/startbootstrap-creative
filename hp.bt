@@ -1,1 +1,8 @@
-put -r * 
+cd html
+
+put -r css
+put  -r img
+put -r js
+put -r vendor
+
+put index.html
