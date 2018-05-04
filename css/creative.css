@@ -279,6 +279,9 @@ header.masthead p {
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     font-size: 22px;
   }
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-desc {
+    font-size: 12px;
+  }
 }
 
 .text-primary {
